@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block job %}
+<div class="banner-text" style=" width:100%;  " id="jobslist">
+    <h3 style="margin-top: 3%;text-transform: uppercase;">Jobs<span style="color:#e31b6d;"> Founded</span></h3>
+    <div class="center">
+        <div class="wrapper" id="test">
+            <div class="content">
+                {% for n in data %}
+                <a href="#" class="my-card">
+                    <div class="card" style="margin-top: 2%;"
+                        onclick="openModal('{{n.title}}','{{n.company}}','{{n.location}}','{{n.description|escapejs }}','{{n.company_logo}}','{{n.how_to_apply|escapejs}}')">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-4">
+                                    {% if n.company_logo %}
+                                    <img src={{n.company_logo}} alt="" class="image">
+                                    {% else %}
+                                    <img src="/myportfolio/static/images/company.png" alt="" class="image">
+                                    {% endif %}
+                                </div>
+                                <div class="col-8">
+                                    <h5>{{n.title}}</h5>
+                                    <div><span>{{n.company}}</span></div>
+                                    <div>
+                                        <span>{{n.location}}</span>
+                                    </div>
+                                    <div>
+                                        <span>{{n.type}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                {% endfor%}
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="modal fade my-modal" id="job" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" style="opacity: 1; margin-top: 3%;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" style="background-color: #424a64;color: azure;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-3">
+                        <img id="logoModal" src="" alt="" class="image">
+                    </div>
+                    <div class="col-9">
+                        <h5 style="font-weight: bold;" id="title"></h5>
+                        <span id="company"></span>
+                        <span id="location"></span>
+                    </div>
+                </div>
+                <div class="row" id="desc" style="padding-left: 20px;padding-right: 20px;padding-top: 30px;">
+                </div>
+                <div>
+                    <h2 style="color: #e31b6d;text-transform: uppercase;">Apply!!</h2>
+                    <div id="apply" style="text-align: left;"> </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock job %}

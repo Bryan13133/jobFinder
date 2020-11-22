@@ -1,0 +1,138 @@
+h6{
+    color: aqua;
+}
+.example-spacer {
+    flex: 1 1 auto;
+}
+ 
+
+.banner-text{
+    width: 100%;
+    position: absolute;
+}
+ 
+.banner-text h2{
+    text-align: center;
+    font-size: 50px;
+    color: azure;
+}
+  
+.banner-text-btn {
+    position: relative;
+    color: azure;
+    background-color: transparent;
+    text-align: center;
+    height: 50px;
+    border: 2px solid #fff;
+    box-sizing: inherit;
+    font-size: 13pt;
+    padding: 10px 20px;
+    transition: all 0.5s;
+    z-index: 999999;
+}
+
+.banner-text-btn:hover{
+    background-color:#e31b6d;
+    cursor: pointer;
+}
+
+
+.animation-area{
+    background: linear-gradient(to left,#2a345a,#13182a);
+    width: 100%;
+    height: 100vh;
+}
+ 
+.box-area{
+    margin-top: 0%;
+    margin-bottom: 0%;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+  
+.box-area li {
+    position: relative;
+    display: block;
+    list-style: none;
+    width: 25px;
+    height: 25px;
+    background: rgba(255,255,255,0.2);
+    animation: animate 20s linear infinite;
+    bottom: -150px;
+}
+  
+.box-area li:nth-child(1){
+    top: 94%;
+    left: 86%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+    animation-duration: 16s;
+}
+  
+.box-area li:nth-child(2){
+    top: 94%;
+    left: 7%;
+    width: 30px;
+    height: 30px;
+    animation-delay: 0s;
+    animation-duration: 10s;
+}
+  
+.box-area li:nth-child(3){
+    top: 94%;
+    left: 70%;
+    width: 100px;
+    height: 100px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.box-area li:nth-child(4){
+    top: 94%;
+    left: 13%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 19s;
+}
+ 
+.box-area li:nth-child(5){
+    top: 94%;
+    left: 65%;
+    width: 40px;
+    height: 40px;
+    animation-delay: 0s;
+}
+ 
+.box-area li:nth-child(6){
+    top: 94%;
+    left: 10%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 0s;
+}
+ 
+.box-area li:nth-child(7){
+    top: 94%;
+    left: 27%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 8.5s;
+    animation-duration: 15s;
+}
+
+.button-main{
+    background-color: transparent;
+    text-align: center;
+}
+  
+@keyframes animate{
+    0%{transform: translateY(0) rotate(1deg); opacity: 1;}
+    100%{transform: translateY(-800px) rotate(360deg); opacity: 0; }
+}
+   
+    

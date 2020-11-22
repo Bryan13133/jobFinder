@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block signup %}
+
+
+<div style="margin-top: 3%;">
+    <div style="text-align: center;">
+        <a href="{% url 'login'%}" style="display: inline-block; padding-left: 2%; color: #e31b6d;"><h3>Log In</h3></a>
+        <a href="{% url 'signup'%}" style="display: inline-block; padding-left: 2%; color: azure;"><h3 style="color: #e31b6d;" >Sign Up</h3> </a>
+    </div>
+    <div class="main-agileinfo">
+        <div class="agileits-top">
+            
+            <form method="POST">
+                {% csrf_token %}
+                
+                <div class="row justify-content-center "style="margin-right: 0px;margin-left: 0px;">
+                    <div class="col-md-12">
+                        <label for="keyWord" style="color:#e31b6d; text-align: left; margin-top: 1%;">  {{form.username.label_tag}}</label>
+                        {{form.username}}
+                        <label for="keyWord" style="color:#e31b6d; text-align: left; margin-top: 2%;">  {{form.email.label_tag}}</label>
+                        {{form.email}}
+                        <label for="keyWord" style="color:#e31b6d; text-align: left; margin-top: 2%;">  {{form.password1.label_tag}}</label>
+                        {{form.password1}}
+                        <label for="keyWord" style="color:#e31b6d; text-align: left; margin-top: 2%;">  {{form.password2.label_tag}}</label>
+                        {{form.password2}}
+                            <label class="anim" style="color:azure ;">
+                                <input type="checkbox" class="checkbox" required="">
+                                <span>I Agree To The Terms & Conditions</span>
+                            </label>
+                            {% for field in form %}
+                              {% for error in field.errors %}
+                                <div class="alert alert-danger" role="alert" style="margin-top: 2%; padding-left: 2%;">
+                                    <i class="fas fa-exclamation-circle" style="padding-right: 1%;"></i>{{ error }} 
+                                </div>
+                              {% endfor %}
+                          {% endfor %}
+                    </div>
+                </div>
+                
+                <input type="submit" value="SIGNUP">
+            </form>
+          
+            <p>Already have an Account? <a href="{% url 'login'%}" style="color: #e31b6d;"> Login Now!</a></p>
+        </div>
+    </div>
+</div>
+
+{% endblock signup %}
+
+

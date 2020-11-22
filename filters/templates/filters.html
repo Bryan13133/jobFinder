@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block login%}
+<nav class="navbar navbar-light bg-light justify-content-between" style="background: linear-gradient(to left,#2a345a,#13182a);">
+    <a  href="{% url 'filters'%}" class="navbar-brand" style="color: #e31b6d"><i class="fas fa-home"></i> Home</a>
+    <a href="{% url 'logout'%}" class="btn btn-outline-success my-2 my-sm-0 "  style="color: azure; border-color: #e31b6d; ">Logout</a>
+  </nav>
+  <div class="pos-f-t">
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+          <h4 class="text-white">Collapsed content</h4>
+          <span class="text-muted">Toggleable via the navbar brand.</span>
+        </div>
+      </div>
+  </div>
+<div style=" width:100%;" id="filters">
+    <h3 style="margin-top: 5%; text-transform: uppercase; text-align: center;" >  Let's<span style="color:#e31b6d;"> Start</span></h3> 
+   <form method="post" id="filtersForm">
+       {% csrf_token %}
+       <div class="row justify-content-center "style="margin-right: 0px;margin-left: 0px;">
+           <div class="col-md-3">
+            <div class="row">
+               <div class="col-md-12">
+                   <label for="keyWord" style="color:#e31b6d;">{{form.jobDescription.label_tag}}</label>
+                   {{form.jobDescription}}
+               </div>
+            </div>
+           </div>
+           <div class="col-md-3">
+               <div class="row">
+                   <div class="col-md-12">
+                       <label for="area" style="color:#e31b6d;">{{form.country.label_tag}}</label>
+                       {{form.country}}
+                   </div>
+                </div>
+           </div>
+       </div>
+       <div class="row justify-content-center "style="margin-right: 0px;margin-left: 0px;margin-top:1%;">
+           <div class="col-md-3">
+            <div class="row">
+               <div class="col-md-12">
+                   <label for="keyWord" style="color:#e31b6d;">{{form.jobType.label_tag}}</label>
+                   {{form.jobType}}
+               </div>
+            </div>
+           </div>
+           <div class="col-md-3">
+               <div class="row">
+                   <div class="col-md-12">
+                       <label for="area" style="color:#e31b6d;">{{form.category.label_tag}}</label>
+                       {{form.category}}
+                   </div>
+                </div>
+           </div>
+       </div>
+       <div class="row justify-content-center "style="margin-right: 0px;margin-left: 0px;margin-top:1%;">
+           <div class="col-md-3">
+            <div class="row">
+               <div class="col-md-12">
+                   <label for="keyWord" style="color:#e31b6d;">{{form.skills.label_tag}}</label>
+                   {{form.skills}}
+               </div>
+            </div>
+           </div>
+           <div class="col-md-3">
+               <div class="row">
+                   <div class="col-md-12">
+                       <label for="area" style="color:#e31b6d;">{{form.budget.label_tag}}</label>
+                       {{form.budget}}
+                   </div>
+                </div>
+           </div>
+       </div>
+       <div class="row justify-content-center "style="margin-right: 0px;margin-left: 0px;margin-top:1%;">
+           <div class="col-md-3">
+            <div class="row">
+               <div class="col-md-12">
+                   <label for="keyWord" style="color:#e31b6d;">{{form.technology.label_tag}}</label>
+                   {{form.technology}}
+               </div>
+            </div>
+           </div>
+           <div class="col-md-3">
+               <div class="row">
+                   <div class="col-md-12">
+                       <label for="area" style="color:#e31b6d;">{{form.daysPosted.label_tag}}</label>
+                       {{form.daysPosted}}
+                   </div>
+                </div>
+           </div>
+       </div>
+       <div class="row justify-content-center "style="margin-right: 0px;margin-left: 0px;margin-top:1%;">
+            <div class="col-md-12">
+               <div class="row">
+                   <div class="col-md-12">
+                        <div  style="text-align: center; margin-right: 0px;margin-left: 0px;margin-top: 2%;">
+                           <button type="submit" class="banner-text-btn btn" onclick="" style="text-align: center; margin-right: 0px;margin-left: 0px;">Find</button>
+                       </div> 
+                   </div>
+               </div>
+
+           </div> 
+
+       </div>
+   </form>
+
+</div>
+{% endblock login%}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block start %}
+<div  style="margin-top: 20%; text-align: center; display: block;" id="home">
+    <h3 style="margin-top: 0%;text-transform: uppercase;" >Find your perfect<span style="color:#e31b6d;"> job</span></h3> 
+    <div>
+        <h3 style="display: inline-block;padding-right: 2%;" ><a class="banner-text-btn btn" href="{% url 'login'%}" >Log In</a></h3>
+        <h3 style="display: inline-block;padding-left: 2%;" ><a class="banner-text-btn btn" href="{% url 'signup'%}" >Sign Up</a></h3>
+    </div>
+    
+</div>
+
+
+
+{% endblock start %}

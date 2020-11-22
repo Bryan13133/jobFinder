@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block signup %}
+
+
+<div style="margin-top: 3%;">
+    <div style="text-align: center;">
+        <a href="{% url 'login'%}" style="display: inline-block; padding-left: 2%; color: azure;"><h3 style="color: #e31b6d;">Log In</h3></a>
+        <a href="{% url 'signup'%}" style="display: inline-block; padding-left: 2%; color: #e31b6d;"><h3 >Sign Up</h3> </a>
+    </div>
+    <div class="main-agileinfo">
+        <div class="agileits-top">
+            
+            <form method="POST">
+                {% csrf_token %}
+                
+                <div class="row justify-content-center "style="margin-right: 0px;margin-left: 0px;">
+                    <div class="col-md-12">
+                        <label for="keyWord" style="color:#e31b6d; text-align: left; margin-top: 1%;">  {{form.username.label_tag}}</label>
+                        {{form.username}}
+                        <label for="keyWord" style="color:#e31b6d; text-align: left; margin-top: 2%;">  {{form.password.label_tag}}</label>
+                        {{form.password}}
+
+                            {% for field in form %}
+                              {% for error in field.errors %}
+                                <div class="alert alert-danger" role="alert" style="margin-top: 2%; padding-left: 2%;">
+                                    <i class="fas fa-exclamation-circle" style="padding-right: 1%;"></i>{{ error }} 
+                                </div>
+                              {% endfor %}
+                          {% endfor %}
+
+                    </div>
+                </div>
+                
+                <input type="submit" value="LOGIN">
+            </form>
+          
+            <p>Not registered? <a href="{% url 'signup'%}" style="color: #e31b6d;"> Create an account!</a></p>
+        </div>
+    </div>
+</div>
+
+{% endblock signup %}
+
+
