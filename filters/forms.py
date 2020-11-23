@@ -20,9 +20,7 @@ class FiltersForm(forms.ModelForm):
             'jobDescription',
             'country',        
             'jobType',        
-            'category',      
             'skills',        
-            'budget',        
             'daysPosted',     
             'technology'   
         ]
@@ -30,9 +28,7 @@ class FiltersForm(forms.ModelForm):
             'jobDescription': 'Job Description',
             'country': 'Country',        
             'jobType': 'Job Type',       
-            'category': 'Category',      
             'skills': 'Skills',       
-            'budget': 'Budget',       
             'daysPosted': 'Days Posted',    
             'technology':  'Technology'
         }
@@ -42,7 +38,6 @@ class FiltersForm(forms.ModelForm):
             'jobType':        forms.Select(attrs={'class': 'select-css'}),
             'category':       forms.TextInput(attrs={'class': 'text'}),
             'skills':         forms.TextInput(attrs={'class': 'text'}),
-            'budget':         forms.TextInput(attrs={'class': 'text'}),
             'daysPosted':     forms.Select(attrs={'class': 'select-css'}),
             'technology':     forms.Select(attrs={'class': 'select-css'}),
         }

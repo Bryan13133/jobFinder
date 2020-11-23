@@ -27,8 +27,8 @@
             $('#title').text(t);
             $('#company').text(c);
             $('#location').text(l);
-            $('#desc').html(d);
             $('#logoModal').attr("src", cl);
+            $('#desc').html(d);
             $('#apply').html(a);
             $('#job').show();
         }
@@ -43,39 +43,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, nav ul, nav li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-.btn-outline-success:hover{background-color:#e31b6d;}
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block;
-}
 
-ol, ul {
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after, q:before, q:after {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
+.btn-outline-success{color: azure;border-color:#e31b6d}
+.btn-outline-success:hover{color:azure;background-color:#e31b6d;border-color:#e31b6d}
+.btn-outline-success.focus,
+.btn-outline-success:focus{box-shadow:0 0 0 .2rem #e31b6d}
+.btn-outline-success.disabled,
+.btn-outline-success:disabled{color:azure;background-color:transparent}
+.btn-outline-success:not(:disabled):not(.disabled).active,
+.btn-outline-success:not(:disabled):not(.disabled):active,.show>
+.btn-outline-success.dropdown-toggle{color:azure;background-color:#e31b6d;border-color:#e31b6d}
+.btn-outline-success:not(:disabled):not(.disabled).active:focus,
+.btn-outline-success:not(:disabled):not(.disabled):active:focus,.show>
+.btn-outline-success.dropdown-toggle:focus{box-shadow:0 0 0 .2rem #e31b6d}
 /*-- start editing from here --*/
 a {
   text-decoration: none;
@@ -130,36 +110,12 @@ a {
   vertical-align: top;
 }
 
-/* vertical align top */
-nav.vertical ul li {
-  display: block;
-}
-
-/* vertical menu */
-nav.horizontal ul li {
-  display: inline-block;
-}
-
-/* horizontal menu */
-img {
-  max-width: 100%;
-}
-
 /*-- end reset --*/
 body {
 
   font-family: 'Roboto', sans-serif;
 }
 
-h1 {
-  font-size: 3em;
-  text-align: center;
-  color: #fff;
-  font-weight: 100;
-  text-transform: capitalize;
-  letter-spacing: 4px;
-  font-family: 'Roboto', sans-serif;
-}
 
 /*-- main --*/
 .main-w3layouts {
@@ -799,7 +755,6 @@ border-radius: .25rem;
 max-width: 100%; 
 box-sizing: border-box;
 height: calc(1.5em + .75rem + 2px);
-
 box-shadow: 0 1px 0 1px rgba(0,0,0,.03);
 -moz-appearance: none;
 -webkit-appearance: none;
@@ -810,10 +765,6 @@ background-repeat: no-repeat, repeat;
 background-position: right .7em top 50%, 0 0;
 background-size: .65em auto, 100%;
 }
-.navbar-collapse.in {
-    display: block !important;
-}
-    
     </style>
     <title>Find a Job</title>
 </head>

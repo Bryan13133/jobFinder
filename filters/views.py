@@ -18,7 +18,7 @@ def filters(request):
             response = requestGit(data=gitData)
             if(response):
                 data = response.json()
-                return render(request,'joblist.html',{'data':data})
+                return render(request,'jobs.html',{'data':data})
             else:
                 form = FiltersForm()
                 context = {
@@ -47,5 +47,8 @@ def requestGit(data):
 def logoutApp(request):
     logout(request)
     return redirect('home1')
+
+def jobs(request):
+    return render(request,'jobs.html')
 
 

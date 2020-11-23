@@ -17,11 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from home.views import home
 from myportfolio.views import base
-from jobs.views import joblist
 from login.views import loginApp
 from signup.views import signup
 from django.conf import settings
-from filters.views import filters,logoutApp
+from filters.views import filters,logoutApp,jobs
 from django.conf.urls.static import static 
 
 urlpatterns = [
@@ -29,10 +28,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('base/',base,name='base'),
     path('home/',home,name='home'),
-    path('jobslist/',joblist,name='jobslist'),
     path('login/',loginApp,name='login'),
     path('signup/',signup,name='signup'),
     path('filters/',filters,name='filters'),
-    path('logoutApp/',logoutApp,name='logout')
+    path('logoutApp/',logoutApp,name='logout'),
+    path('jobs/',jobs,name='jobs')
     
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
