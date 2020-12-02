@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     <script>
-     
+      function logout(){
+        window.location.replace('');
+      }
         function showFilters(){
             var x = document.getElementById("filters");
             var y = document.getElementById("home");
@@ -36,13 +39,14 @@
             $('#job').hide();
         }
     </script>
+    <link rel="stylesheet" href="{% static '/css/main.css' %}" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Job</title>
     <style>
-
+         
 
 .btn-outline-success{color: azure;border-color:#e31b6d}
 .btn-outline-success:hover{color:azure;background-color:#e31b6d;border-color:#e31b6d}
@@ -59,6 +63,88 @@
 /*-- start editing from here --*/
 a {
   text-decoration: none;
+}
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#notfound {
+  position: relative;
+  height: 100vh;
+}
+
+#notfound .notfound {
+  position: absolute;
+  left: 45%;
+  top: 45%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.notfound {
+  max-width: 560px;
+  width: 100%;
+  padding-left: 160px;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.notfound .notfound-404 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  width: 140px;
+  height: 140px;
+  background-size: cover;
+}
+
+.notfound h1 {
+  
+  font-size: 75px;
+  font-weight: 700;
+  color: #e31b6d;
+  text-transform: uppercase;
+}
+
+.notfound h2 {
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #151723;
+}
+
+.notfound p {
+ 
+  color: azure;
+  font-weight: 400;
+}
+
+.notfound a {
+  display: inline-block;
+  font-weight: 700;
+  border-radius: 40px;
+  text-decoration: none;
+  color: #e31b6d;
+}
+
+@media only screen and (max-width: 767px) {
+  .notfound .notfound-404 {
+    width: 110px;
+    height: 110px;
+  }
+  .notfound {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 110px;
+  }
 }
 
 .txt-rt {
@@ -520,6 +606,9 @@ input[type="submit"]:hover {
   scrollbar-width: thin; */
   
 }
+.marginHome{
+  margin-top: 20%;
+}
 @media only screen and (max-width: 600px) {
  .center{
   margin: auto;
@@ -535,6 +624,11 @@ input[type="submit"]:hover {
   /* overflow-y: scroll;
   scrollbar-width: thin; */
  }
+
+.marginHome{
+  margin-top: 80%;
+}
+
  
 }
 
@@ -664,11 +758,11 @@ input[type="submit"]:hover {
     list-style: none;
     width: 25px;
     height: 25px;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     animation: animate 20s linear infinite;
     bottom: -150px;
 }
-  
+  d8d8d8
 .box-area li:nth-child(1){
     top: 94%;
     left: 86%;
@@ -765,8 +859,8 @@ background-repeat: no-repeat, repeat;
 background-position: right .7em top 50%, 0 0;
 background-size: .65em auto, 100%;
 }
+
     </style>
-    <title>Find a Job</title>
 </head>
 <body>
    
@@ -780,6 +874,9 @@ background-size: .65em auto, 100%;
 
     {% block login %}
     {% endblock login %}
+
+    {% block 404 %}
+    {% endblock 404 %}
 </div>
   
     <div class="animation-area">

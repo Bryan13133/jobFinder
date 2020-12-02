@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import FiltersForm2,FiltersForm
 from django.contrib.auth import logout
+from django.views.decorators.cache import cache_control
 import requests
 # Create your views here.
 def home(request):

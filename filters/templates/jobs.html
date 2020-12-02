@@ -3,7 +3,7 @@
 <nav class="navbar navbar-light bg-light justify-content-between" style="background: linear-gradient(to left,#2a345a,#13182a);">
     <a  href="{% url 'filters'%}" class="navbar-brand" style="color: #e31b6d"><i class="fas fa-home"></i> Home</a>
   
-    <a href="{% url 'logout'%}" class="btn btn-outline-success my-2 my-sm-0 "  style="color: azure; border-color: #e31b6d; ">Logout</a>
+    <a href="{% url 'logout'%}" class="btn btn-outline-success my-2 my-sm-0 "  style="color: azure; border-color: #e31b6d; " onclick="logout()">Logout</a>
   </nav>
 <div class="banner-text" style=" width:100%;height: auto;" id="jobslist">
     <h3 style="margin-top: 0%;text-transform: uppercase;">Jobs<span style="color:#e31b6d;"> Founded</span></h3>
@@ -78,35 +78,4 @@
         </div>
     </div>
 </div> 
-
-<!-- 
-<div class="modal fade" id="job" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="opacity: 1; margin-top: 3%;">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"onclick="closeModal()">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            <div class="row">
-                <div class="col-3">
-                    <img id="logoModal" src="" alt="" class="image">
-                </div>
-                <div class="col-9">
-                    <h5 style="font-weight: bold;" id="title"></h5>
-                    <span id="company"></span>
-                    <span id="location"></span>
-                </div>
-            </div>
-            <div class="row" id="desc" style="padding-left: 20px;padding-right: 20px;padding-top: 30px;">
-            </div>
-            <div>
-                <h2 style="color: #e31b6d;text-transform: uppercase;">Apply!!</h2>
-                <div id="apply" style="text-align: left;"> </div>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-
 {% endblock job %}
